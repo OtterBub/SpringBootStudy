@@ -34,8 +34,7 @@ public class BoardServiceImpl implements BoardService {
     }
     
     @Override
-    public boolean delete(int bno) {
-        System.out.println("delete ID: " + bno);
-        return false;
+    public boolean delete(int id) {
+        return boardDao.deleteBoard(session, id);
     }
 }

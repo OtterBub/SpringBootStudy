@@ -13,6 +13,6 @@
         VALUES(#{title}, #{content}, #{registerId}, CURDATE());
     </insert>
     <delete id="deleteBoard" parameterType="int">
-        DELETE FROM board WHERE id=#{int}};
+        DELETE FROM board WHERE id=#{id};
     </delete>
 </mapper>

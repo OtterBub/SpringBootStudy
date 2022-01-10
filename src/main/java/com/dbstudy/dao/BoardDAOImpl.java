@@ -25,4 +25,10 @@ public class BoardDAOImpl implements BoardDAO {
         session.insert("BoardMapper.createBoard", dto);
         return true;
     }
+
+    @Override
+    public boolean deleteBoard(SqlSessionTemplate session, int id) {
+        session.delete("BoardMapper.deleteBoard", id);
+        return true;
+    }
 }
