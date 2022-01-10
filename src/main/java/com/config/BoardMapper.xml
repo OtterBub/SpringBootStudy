@@ -10,7 +10,7 @@
     </select>
     <insert id="createBoard" parameterType="com.dbstudy.dto.BoardDTO">
         INSERT INTO board(title, content, register_id, register_time)
-        VALUES(#{title}, #{content}, #{registerId}, #{registerTime});
+        VALUES(#{title}, #{content}, #{registerId}, CURDATE());
     </insert>
     <delete id="deleteBoard" parameterType="int">
         DELETE FROM board WHERE id=#{int}};

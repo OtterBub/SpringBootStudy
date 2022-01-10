@@ -7,13 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import ch.qos.logback.classic.Logger;
 
 import com.dbstudy.dto.*;
 import com.dbstudy.service.*;
@@ -29,14 +28,23 @@ public class BoardController {
         return "redirect:/boardlist/";
     }
 
-    @PostMapping("/board")
-    public String create(BoardDTO dto) {
+    @GetMapping("/writeboard")
+    public ModelAndView writeBoard(BoardDTO dto) {
+        ModelAndView mav = new ModelAndView("insertboard");
+        
+        List < BoardDTO > boardList = boardService.boardList();
+        mav.addObject("boardList", boardList);
 
+        return mav;
+    }
+
+    @PostMapping("/insertboard")
+    public String create(@ModelAttribute BoardDTO dto) {
         boardService.create(dto);
         return "redirect:/boardlist/";
     }
 
-    @RequestMapping("/create")
+    @RequestMapping("/createtest")
     public String createTest() {
         LocalDateTime dateT = LocalDateTime.now();
         BoardDTO dto = new BoardDTO("Test", "TestContent", "작성자Test", dateT);
@@ -45,8 +53,9 @@ public class BoardController {
         return "redirect:/boardlist/";
     }
 
-    @DeleteMapping("/board/{bno}")
-    public void delete(@PathVariable("bno") int bno) throws Exception {
-        boardService.delete(bno);
+    @PostMapping(value = "/deleteboard/{id}")
+    public String delete(@PathVariable int id) {
+        boardService.delete(id);
+        return "redirect:/boardlist";
     }
 }

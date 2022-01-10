@@ -9,15 +9,37 @@
 </head>
 <body>
     <h2><a href="/boardlist">ShowBoard Detail! ${pageNum}</a></h2>
-    <div>JSP BoardList Test</div>
+    <div>JSP BoardInsert Test</div>
+    <form action="/insertboard" method="post">
+        <table class="table table-striped" style="width: 500px;">
+            <caption><b>글쓰기</b></caption>
+            <tr>
+                <th>작성자</th>
+                <td>
+                    <input type="text" name="registerId" style="width: 100px;" class="form-control input-sm">
+                </td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>
+                    <input type="text" name="title" style="width: 300px;" class="form-control input-sm">
+                </td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>
+                    <input type="text" name="content" style="width: 400px; height: 150px;" class="form-control input-sm">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-info">저장</button>
+                </td>
+            </tr>
+        </table>
+    </form>
     <div>
-        <h1> TITLE: ${boardDetail.title} </h1>
-        <h2> CONTENT: ${boardDetail.content} </h2>
-        <form name="delboard" method="post" action="/deleteboard/${boardDetail.id}">
-            <input type="hidden" name="_method" value="delete"/>
-            <button>삭제</button>
-        </form>
-        <button>수정</button>
+        
     </div>
     <table class="board_list">
         <colgroup>

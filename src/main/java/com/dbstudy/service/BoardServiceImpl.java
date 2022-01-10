@@ -6,8 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
 import com.dbstudy.dto.*;
 import com.dbstudy.dao.*;
 
@@ -37,7 +35,7 @@ public class BoardServiceImpl implements BoardService {
     
     @Override
     public boolean delete(int bno) {
-        
+        System.out.println("delete ID: " + bno);
         return false;
     }
 }

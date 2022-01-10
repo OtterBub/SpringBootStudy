@@ -1,13 +1,11 @@
 package com.dbstudy.dao;
 
 import java.util.List;
-import java.time.LocalDateTime;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.dbstudy.dto.BoardDTO;
-import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.BooleanArraySerializer;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
