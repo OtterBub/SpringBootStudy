@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>View Test Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>View Test Page</title>
 </head>
 <body>
     <h2><a href="/boardlist">ShowBoard Detail! ${pageNum}</a></h2>
@@ -13,10 +14,48 @@
         <h1> TITLE: ${boardDetail.title} </h1>
         <h2> CONTENT: ${boardDetail.content} </h2>
     </div>
-    <c:forEach var="item" items="${boardList}" varStatus="idx">
-    <a href="/showboard/?id=${item.id}"> 
-        ${item.id} title: ${item.title} / ${item.content} <br />
-    </a>
-    </c:forEach>
+    <table class="board_list">
+        <colgroup>
+            <col width="15%"/>
+            <col width="*"/>
+            <col width="15%"/>
+            <col width="25%"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">글번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">조회수</th>
+                <th scope="col">작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="item" items="${boardList}" varStatus="idx">
+                <tr>
+                    <td>
+                        <a> 
+                            ${item.id}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/showboard/?id=${item.id}"> 
+                            ${item.title}
+                        </a>
+                    </td>
+                    <td>
+                        <a> 
+                            ${item.readCnt}
+                        </a>
+                    </td>
+                    <td>
+                        <a> 
+                            ${item.readCnt}
+                        </a>
+                    </td>
+                    
+                </tr>
+            </c:forEach>    
+        </tbody>
+    </table>
 </body>
 </html>
