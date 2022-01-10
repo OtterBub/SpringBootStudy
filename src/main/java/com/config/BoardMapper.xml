@@ -8,4 +8,8 @@
     <select id="showBoardDetail" resultType="board">
         SELECT * FROM board WHERE id=#{_id};
     </select>
+    <insert id="createBoard" parameterType="com.dbstudy.dto.BoardDTO">
+        INSERT INTO board(title, content, register_id, register_time)
+        VALUES(#{title}, #{content}, #{registerId}, #{registerTime});
+    </insert>
 </mapper>

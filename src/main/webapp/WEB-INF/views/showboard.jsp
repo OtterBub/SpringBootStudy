@@ -7,7 +7,7 @@
 <title>View Test Page</title>
 </head>
 <body>
-    <h2><a href="/board">ShowBoard Detail! ${pageNum}</a></h2>
+    <h2><a href="/boardlist">ShowBoard Detail! ${pageNum}</a></h2>
     <div>JSP BoardList Test</div>
     <div>
         <h1> TITLE: ${boardDetail.title} </h1>

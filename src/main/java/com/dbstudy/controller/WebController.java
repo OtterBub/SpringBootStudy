@@ -20,13 +20,8 @@ public class WebController {
     BoardService boardService;
 
     @RequestMapping("/")
-    public ModelAndView SelectAllFromUser() {
-        ModelAndView mav = new ModelAndView("test");
-
-        List < UserDTO > userList = userService.userList();
-
-        mav.addObject("list", userList);
-        return mav;
+    public String SelectAllFromUser() {
+        return "redirect:/boardlist/";
     }
 
     @RequestMapping("/test")
@@ -38,7 +33,7 @@ public class WebController {
         return mav;
     }
 
-    @RequestMapping("/board")
+    @RequestMapping("/boardlist")
     public ModelAndView viewBoardList() {
         ModelAndView mav = new ModelAndView("board");
         

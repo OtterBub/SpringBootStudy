@@ -54,6 +54,7 @@
                 </c:forEach>    
             </tbody>
         </table>
+        <button id="createBtn">등록</button>
     </div>
     <div>---- JSP UserList Test ----</div>
     <c:forEach var="item" items="${list}" varStatus="idx">

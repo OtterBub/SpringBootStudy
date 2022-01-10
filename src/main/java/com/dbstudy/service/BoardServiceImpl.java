@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 import com.dbstudy.dto.*;
 import com.dbstudy.dao.*;
 
@@ -26,5 +28,16 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public BoardDTO showBoardDetail(int id) {
         return boardDao.showBoardDetail(session, id);
+    }
+
+    @Override
+    public boolean create(BoardDTO dto) {
+        return boardDao.createBoard(session, dto);
+    }
+    
+    @Override
+    public boolean delete(int bno) {
+        
+        return false;
     }
 }
