@@ -34,7 +34,7 @@ public class BoardDAOImpl implements BoardDAO {
 
     @Override
     public boolean updateBoard(SqlSessionTemplate session, BoardDTO dto) {
-        session.update("BoardMapper.updateBoard" ,dto);
+        session.update("BoardMapper.updateBoard", dto);
         return true;
     }
 }

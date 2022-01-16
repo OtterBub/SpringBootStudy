@@ -31,7 +31,7 @@ public class BoardController {
 
     @GetMapping("/board")
     public String view() {
-        return "redirect:/boardlist/";
+        return "redirect:/boardlist";
     }
 
     @GetMapping("/writeboard")
@@ -76,7 +76,7 @@ public class BoardController {
         return "redirect:/boardlist/";
     }
 
-    @GetMapping(value = "/updateboard/")
+    @GetMapping(value = "/updateboard")
     public ModelAndView update(
         @RequestParam(required = true) int id) {
             ModelAndView mav = new ModelAndView("updateboard");
@@ -90,18 +90,15 @@ public class BoardController {
             return mav;
     }
 
-    @GetMapping(value = "/updateboard.do/")
-    public String update(
-        @RequestParam(required = true) int id,
-        @RequestParam(required = false) String title,
-        @RequestParam(required = false) String content) {
+    @PostMapping(value = "/updateboard.do")
+    public String update(@ModelAttribute BoardDTO dto) {
 
-            // %02 {title or content} %03
-            // %02 - Start of Text
-            // %03 - End of Text
-            if( (title != null) && (content != null) ) {
-                boardService.update(id, title, content);
-            }
-            return "redirect:/boardlist/";
+        // %02 {title or content} %03
+        // %02 - Start of Text
+        // %03 - End of Text
+        if(dto != null) {
+            boardService.update(dto);
+        }
+        return "redirect:/boardlist";
     }
 }

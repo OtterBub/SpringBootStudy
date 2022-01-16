@@ -12,31 +12,26 @@
 <body>
     <h2><a href="/boardlist">Update Board! ${pageNum}</a></h2>
     <div>JSP BoardInsert Test</div>
-    <form action="/insertboard" method="post">
+    <form action="/updateboard.do" method="post">
+        <input type="hidden" name="id" value="${boardDetail.id}"/>
         <table class="table table-striped" style="width: 500px;">
             <caption><b>글쓰기</b></caption>
             <tr>
                 <th>작성자</th>
                 <td>
-                    <textarea class="form-control" id="text" name="content" placeholder="Type in your message" rows="1">
-${boardDetail.registerId}
-                    </textarea>
+                    <textarea class="form-control" id="regitsterIdText" name="registerId" rows="1">${boardDetail.registerId}</textarea>
                 </td>
             </tr>
             <tr>
                 <th>제목</th>
                 <td>
-                    <textarea class="form-control" id="text" name="content" placeholder="Type in your message" rows="1">
-${boardDetail.title}
-                    </textarea>
+                    <textarea class="form-control" id="titleText" name="title" rows="1">${boardDetail.title}</textarea>
                 </td>
             </tr>
             <tr>
                 <th>내용</th>
                 <td>
-                    <textarea class="form-control" id="text" name="content" placeholder="Type in your message" rows="5">
-${boardDetail.content}
-                    </textarea>
+                    <textarea class="form-control" id="text" name="content" placeholder="Type in your message" rows="5">${boardDetail.content}</textarea>
                     <h6 class="pull-right" id="count_message"></h6>
                 </td>
             </tr>
