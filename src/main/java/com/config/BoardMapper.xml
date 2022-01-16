@@ -15,4 +15,10 @@
     <delete id="deleteBoard" parameterType="int">
         DELETE FROM board WHERE id=#{id};
     </delete>
+    <update id="updateBoard" parameterType="com.dbstudy.dto.BoardDTO">
+        UPDATE board
+        SET title = 'UpdateTest',
+            content = 'UpdateContent'
+        WHERE id=#{id};
+    </update>
 </mapper>

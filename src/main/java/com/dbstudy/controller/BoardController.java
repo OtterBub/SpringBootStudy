@@ -23,6 +23,12 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
+    @RequestMapping("/testview")
+    public ModelAndView testView() {
+        ModelAndView mav = new ModelAndView("testview");
+        return mav;
+    }
+
     @GetMapping("/board")
     public String view() {
         return "redirect:/boardlist/";
@@ -57,5 +63,16 @@ public class BoardController {
     public String delete(@PathVariable int id) {
         boardService.delete(id);
         return "redirect:/boardlist";
+    }
+
+    // @GetMapping(value = "/updateboard/{id}")
+    // public String update(@PathVariable int id, @PathVariable String content) {
+    //     boardService.update(id, content);
+    //     return "redirect:/baordlist/";
+    // }
+    @GetMapping(value = "/updateboard/{id}")
+    public String update(@PathVariable int id) {
+        boardService.update(id, "content");
+        return "redirect:/boardlist/";
     }
 }

@@ -37,4 +37,13 @@ public class BoardServiceImpl implements BoardService {
     public boolean delete(int id) {
         return boardDao.deleteBoard(session, id);
     }
+
+    @Override
+    public boolean update(int id, String content) {
+        BoardDTO dto = new BoardDTO();
+        dto.setId(id);
+        dto.setContent(content);
+
+        return boardDao.updateBoard(session, dto);
+    }
 }

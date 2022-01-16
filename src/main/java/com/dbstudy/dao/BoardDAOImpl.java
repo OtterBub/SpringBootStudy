@@ -31,4 +31,10 @@ public class BoardDAOImpl implements BoardDAO {
         session.delete("BoardMapper.deleteBoard", id);
         return true;
     }
+
+    @Override
+    public boolean updateBoard(SqlSessionTemplate session, BoardDTO dto) {
+        session.update("BoardMapper.updateBoard" ,dto);
+        return true;
+    }
 }

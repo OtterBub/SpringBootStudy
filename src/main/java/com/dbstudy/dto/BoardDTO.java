@@ -21,7 +21,9 @@ public class BoardDTO {
     LocalDateTime updateTime;
 
 
-    public BoardDTO() {}
+    public BoardDTO() {
+        super();
+    }
     
     public BoardDTO(int id, String title, String content, int readCnt, String registerId, LocalDateTime registerTime, LocalDateTime updateTime) {
         super();
