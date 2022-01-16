@@ -70,9 +70,38 @@ public class BoardController {
     //     boardService.update(id, content);
     //     return "redirect:/baordlist/";
     // }
-    @GetMapping(value = "/updateboard/{id}")
-    public String update(@PathVariable int id) {
-        boardService.update(id, "content");
+    @GetMapping(value = "/updatetest/")
+    public String updateTest(@RequestParam(required = true) int id) {
+        // boardService.update(id, "content");
         return "redirect:/boardlist/";
+    }
+
+    @GetMapping(value = "/updateboard/")
+    public ModelAndView update(
+        @RequestParam(required = true) int id) {
+            ModelAndView mav = new ModelAndView("updateboard");
+            List < BoardDTO > boardList = boardService.boardList();
+            mav.addObject("boardList", boardList);
+
+            BoardDTO dto = boardService.showBoardDetail(id);
+
+            mav.addObject("boardDetail", dto);
+
+            return mav;
+    }
+
+    @GetMapping(value = "/updateboard.do/")
+    public String update(
+        @RequestParam(required = true) int id,
+        @RequestParam(required = false) String title,
+        @RequestParam(required = false) String content) {
+
+            // %02 {title or content} %03
+            // %02 - Start of Text
+            // %03 - End of Text
+            if( (title != null) && (content != null) ) {
+                boardService.update(id, title, content);
+            }
+            return "redirect:/boardlist/";
     }
 }

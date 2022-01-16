@@ -9,5 +9,5 @@ public interface BoardService {
     public abstract BoardDTO showBoardDetail(int id);
     public abstract boolean create(BoardDTO dto);
     public abstract boolean delete(int id);
-    public abstract boolean update(int id, String content);
+    public abstract boolean update(int id, String title, String content);
 }

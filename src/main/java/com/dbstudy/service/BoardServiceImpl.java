@@ -39,11 +39,13 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public boolean update(int id, String content) {
+    public boolean update(int id, String title, String content) {
         BoardDTO dto = new BoardDTO();
         dto.setId(id);
+        dto.setTitle(title);
         dto.setContent(content);
 
         return boardDao.updateBoard(session, dto);
     }
+    
 }
