@@ -5,6 +5,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/board/insertboard.css">
     <title>View Test Page</title>
 </head>
 <body>
@@ -28,7 +30,8 @@
             <tr>
                 <th>내용</th>
                 <td>
-                    <input type="text" name="content" style="width: 400px; height: 150px;" class="form-control input-sm">
+                    <textarea class="form-control" id="text" name="content" placeholder="Type in your message" rows="5"></textarea>
+                    <h6 class="pull-right" id="count_message"></h6>
                 </td>
             </tr>
             <tr>
@@ -84,5 +87,8 @@
             </c:forEach>    
         </tbody>
     </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/board/insertboard.js"></script>
 </body>
 </html>

@@ -5,9 +5,22 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>View Test Page</title>
 </head>
 <body>
+    <div class="container">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapesd" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            </button>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/">Home</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
     <div class="container">
         <h2>Board!</h2>
         <div>JSP BoardList Test</div>
@@ -62,5 +75,7 @@
         ${idx.index} Hello! ${item.name}, Welcome ${item.city} <br />
     </a>
     </c:forEach>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
