@@ -18,7 +18,7 @@
             <tr>
                 <th>작성자</th>
                 <td>
-                    <input type="text" name="registerId" style="width: 100px;" class="form-control input-sm">
+                    <input type="text" name="register_id" style="width: 100px;" class="form-control input-sm">
                 </td>
             </tr>
             <tr>
@@ -74,12 +74,12 @@
                     </td>
                     <td>
                         <a> 
-                            ${item.readCnt}
+                            ${item.read_cnt}
                         </a>
                     </td>
                     <td>
                         <a> 
-                            ${item.readCnt}
+                            ${item.register_time}
                         </a>
                     </td>
                     

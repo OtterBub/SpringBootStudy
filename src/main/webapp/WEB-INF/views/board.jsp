@@ -55,17 +55,17 @@
                         </td>
                         <td>
                             <a> 
-                                ${item.registerId}
+                                ${item.register_id}
                             </a>
                         </td>
                         <td>
                             <a> 
-                                ${item.readCnt}
+                                ${item.read_cnt}
                             </a>
                         </td>
                         <td>
                             <a> 
-                                ${item.registerTime}
+                                ${item.register_time}
                             </a>
                         </td>
                         

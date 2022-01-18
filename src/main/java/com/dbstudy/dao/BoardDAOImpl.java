@@ -17,6 +17,7 @@ public class BoardDAOImpl implements BoardDAO {
 
     @Override
     public BoardDTO showBoardDetail(SqlSessionTemplate session, int id) {
+        session.update("BoardMapper.incresUpdateBoardReadcnt", id);
         return session.selectOne("BoardMapper.showBoardDetail", id);    
     }
 

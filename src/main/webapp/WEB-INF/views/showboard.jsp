@@ -78,12 +78,12 @@
                                     </td>
                                     <td>
                                         <a> 
-                                            ${item.readCnt}
+                                            ${item.register_time}
                                         </a>
                                     </td>
                                     <td>
                                         <a> 
-                                            ${item.readCnt}
+                                            ${item.read_cnt}
                                         </a>
                                     </td>
                                     

@@ -19,7 +19,7 @@
             <tr>
                 <th>작성자</th>
                 <td>
-                    <textarea class="form-control" id="regitsterIdText" name="registerId" rows="1">${boardDetail.registerId}</textarea>
+                    <textarea class="form-control" id="regitsterIdText" name="register_id" rows="1">${boardDetail.register_id}</textarea>
                 </td>
             </tr>
             <tr>
@@ -75,12 +75,12 @@
                     </td>
                     <td>
                         <a> 
-                            ${item.readCnt}
+                            ${item.read_cnt}
                         </a>
                     </td>
                     <td>
                         <a> 
-                            ${item.readCnt}
+                            ${item.register_id}
                         </a>
                     </td>
                     

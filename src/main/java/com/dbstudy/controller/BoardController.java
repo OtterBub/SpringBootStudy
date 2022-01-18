@@ -50,14 +50,14 @@ public class BoardController {
         return "redirect:/boardlist/";
     }
 
-    @RequestMapping("/createtest")
-    public String createTest() {
-        LocalDateTime dateT = LocalDateTime.now();
-        BoardDTO dto = new BoardDTO("Test", "TestContent", "작성자Test", dateT);
-        boardService.create(dto);
-        System.out.println("create Success");
-        return "redirect:/boardlist/";
-    }
+    // @RequestMapping("/createtest")
+    // public String createTest() {
+    //     LocalDateTime dateT = LocalDateTime.now();
+    //     BoardDTO dto = new BoardDTO("Test", "TestContent", "작성자Test", dateT);
+    //     boardService.create(dto);
+    //     System.out.println("create Success");
+    //     return "redirect:/boardlist/";
+    // }
 
     @PostMapping(value = "/deleteboard/{id}")
     public String delete(@PathVariable int id) {
